@@ -32,6 +32,12 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
 }
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
 /* common css end */
 
 /* header part star here */
@@ -85,10 +91,29 @@ section.home {
     padding: 10rem 9% 2rem;
     display: flex;
     align-items: center;
+    background-image: url('../image/home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 section.home .home{
     padding: 0 9%;
+}
+
+section.home .home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-color: transparent;
+    transition: 1.8s;
+}
+
+section.home .home-imgHover:hover {
+    background-color: var(--bg-color);
+    opacity: .7;
 }
 
 section.home .home-content  {
@@ -178,4 +203,108 @@ section.home .home-content .btn-box .btn::before {
 
 section.home .home-content .btn-box .btn:hover::before {
     width: 100%;
+}
+
+section.home .home-sci {
+    position: absolute;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+section.home .home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    overflow: hidden;
+    z-index: 1;
+    transition: var(--transition)
+}
+
+section.home .home-sci a:hover {
+    color: var(--bg-color);
+}
+
+section.home .home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: var(--transition);
+}
+
+section.home .home-sci a:hover::before {
+    width: 100%;
+}
+
+/* home section design complete */
+
+/* about section design start */
+
+section.about .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--second-bg-color);
+    padding: 6rem 0;
+}
+
+section.about .container .heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+section.about .container .heading span {
+    color: var(--main-color);
+}
+
+section.about .container .about-img {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.about .container .about-img img {
+    width: 90%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+}
+
+section.about .container .about-img .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--second-bg-color);
+    border-bottom: .2rem solid var(--second-bg-color);
+    border-left: .2rem solid var(--main-color);
+    border-right: .2rem solid var(--main-color);
+}
+
+
+section.about .container .about-content {
+    text-align: center;
 }
